@@ -1,0 +1,27 @@
+void main() {
+ const String text = "Hello World";
+ int totalLetters = 0;
+
+ final List<String> names = [
+    "Dan",
+    "Reyna",
+    "John",
+ ];
+
+ final List<int> letterCounts = [
+    3,
+    5,
+    4,
+ ];
+
+ for (int i = 0; i < names.length; i++) {
+    final String name = names[i];
+    final int letters = letterCounts[i];
+
+    totalLetters += letters;
+
+    print("$letters Letters: $name");
+ }
+
+ print("$totalLetters Letters in total");
+}
