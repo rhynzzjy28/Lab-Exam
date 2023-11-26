@@ -1,27 +1,37 @@
 void main() {
- const String text = "Hello World";
- int totalLetters = 0;
-
- final List<String> names = [
-    "Dan",
-    "Reyna",
-    "John",
+ List<Message> inbox = [
+    Message(
+      sender: 'John',
+      message: 'Hello World',
+      isUnread: true,
+    ),
+    Message(
+      sender: 'Reyes',
+      message: '3 Letters',
+      isUnread: true,
+    ),
+    Message(
+      sender: 'John',
+      message: '5 Letters',
+      isUnread: false,
+    ),
+    Message(
+      sender: 'Dan',
+      message: '4 Letters',
+      isUnread: false,
+    ),
  ];
 
- final List<int> letterCounts = [
-    3,
-    5,
-    4,
- ];
-
- for (int i = 0; i < names.length; i++) {
-    final String name = names[i];
-    final int letters = letterCounts[i];
-
-    totalLetters += letters;
-
-    print("$letters Letters: $name");
+ for (var message in inbox) {
+    print(
+        '${message.isUnread ? '(Unread) ' : ''}${message.sender}: ${message.message}');
  }
+}
 
- print("$totalLetters Letters in total");
+class Message {
+ String sender;
+ String message;
+ bool isUnread;
+
+ Message({required this.sender, required this.message, required this.isUnread});
 }
